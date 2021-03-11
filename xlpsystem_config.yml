@@ -1,0 +1,19 @@
+version: '2'
+services:
+  mariadb:
+    image: mariadb:10.3
+    restart: always
+    environment:
+    - MYSQL_ROOT_PASSWORD=W2qgpsLtQt
+    volumes:
+    - /Users/bkoo/Documents/Workspace/DockerizedKB/mountpoint/initialData/mariadb/:/var/lib/mysql
+  mediawiki:
+    image: xlpsystem/mediawiki:20180827140844
+    restart: always
+    ports:
+    - 81:80
+    volumes:
+    - /Users/bkoo/Documents/Workspace/DockerizedKB/mountpoint/initialData/mediawiki:/xlp_data
+    - /Users/bkoo/Documents/Workspace/DockerizedKB/mountpoint/initialData/mediawiki_dev:/xlp_dev
+    depends_on:
+    - mariadb
