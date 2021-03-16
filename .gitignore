@@ -1,3 +1,6 @@
+# Ignore hidden Vagrant related files
+.vagrant/
+
 # Compiled class file
 *.class
 
