@@ -1,3 +1,6 @@
+# Ignore Mac Temp File
+*/.DS_Store
+
 # Ignore hidden Vagrant related files
 .vagrant/
 

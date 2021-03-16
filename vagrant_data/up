@@ -1,0 +1,3 @@
+#! /usr/bin/sh
+
+sudo docker-compose --file xlpsystem_config.yml up -d
