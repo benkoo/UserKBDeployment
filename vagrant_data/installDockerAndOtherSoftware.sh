@@ -1,3 +1,4 @@
+
 #! /usr/bin/bash
 
 sudo apt-get update
@@ -22,5 +23,7 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose
 
 sudo mkdir /data
+
+sudo rm -r /data/initialData/
 
 sudo unzip initialData.zip -d /data
