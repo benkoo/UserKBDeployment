@@ -1,3 +1,4 @@
 #! /usr/bin/sh
 
 sudo docker-compose --file xlpsystem_config.yml up -d
+sudo cp LocalSettings.php /data/initialData/mediawiki/.
