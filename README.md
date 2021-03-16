@@ -17,7 +17,7 @@ to the cloud.
 
 ----
 
-## Install VirtualBox 6.1.18_
+## Install VirtualBox (Tested with 6.1.18)
 
 Please go to the following link and download appropriate installation binary for your platform.
 [VirtualBox Download].
