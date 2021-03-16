@@ -16,25 +16,28 @@ that individual users can try out a cluster of services on personal desktops or 
 to the cloud. 
 
 ----
+## Software Installation on the Host Machine
 
-## Install VirtualBox (Tested with 6.1.18)
+### Install VirtualBox (Tested with 6.1.18)
 
 Please go to the following link and download appropriate installation binary for your platform.
 [VirtualBox Download].
 
 
-## Install Vagrant
+### Install Vagrant
 
 After VirtualBox installation, please install Vagrant:
 [Vagrant Download]
 
 
-## Install Git
+### Install Git
 
 Your system must have Git installed. Therefore, please go to the website to install Git.
 [Git Installation]
 
-## Working from this Project Directory
+## Grab code from Git, and Execute the installation activities
+
+### Working from this Project Directory
 
 After Git has been installed on your local system, please go to a command line interface (CLI), and use Git 
 to download the this project. To a local directory.
@@ -51,7 +54,7 @@ use the proper command line tool and type the following command:
 cd UserKBDeployment
 ```
 
-## Launch vagrant processes
+### Launch vagrant processes
 
 In the top level working directory, there is a text file named: "VagrantFile". This file contains the configuration 
 information regarding how to download and launch a VirtualBox Ubuntu instance.
@@ -67,7 +70,7 @@ message saying that your Hyper-Visor or VT-x options is disabled. You might need
 The sequence in rebooting your Windows machine and changing the BIOS or UEFI configurations can be found here:
 [Rebooting Windows into BIOS/UEFI]
 
-## Use ssh to get into the Ubuntu-Linux instance running on VirtualBox
+### Use ssh to get into the Ubuntu-Linux instance running on VirtualBox
 
 After Vagrant launched the Ununtu-Linux intance successful, please use the following instruction to get into
 the Ubuntu-Linux instance:
@@ -90,7 +93,7 @@ sudo dos2unix *.sh
 ```
 Some useful references can be found here: [Ask Ubuntu's Answer on End of Line problems]
 
-## Launch the installation script in the InstallationScript directory
+### Launch the installation script in the InstallationScript directory
 
 To ease the installation process, this instance of Ubuntu-Linux already has access to your host machine's directory: InstallationScript.
 
@@ -102,7 +105,7 @@ cd data
 ./installDockerAndOtherSoftware.sh
 ```
 
-## Launch MediaWiki from Command Line
+### Launch MediaWiki from Command Line
 
 Once Docker and other supporting software has been installed, just run the following command to start MediaWiki.
 Note that it will first install MariaDB, and then MediaWiki, it will take a while.
@@ -110,12 +113,14 @@ Note that it will first install MariaDB, and then MediaWiki, it will take a whil
 ./up.sh
 ```
 
+## Exception Handling
 Due to the massive size (about 2Gb +) of softwrae downloads, the download procedure might hang, if it waits for too long, just use 
 the following command to stop the download process, and relaunch the "./up.sh" command.
 ```
 service docker stop
 ```
 
+## References
 
 [VirtualBox Download]: https://www.virtualbox.org/wiki/Downloads
 [Vagrant Download]: https://www.vagrantup.com/downloads
