@@ -26,7 +26,7 @@ Please go to the following link and download appropriate installation binary for
 ## Install Vagrant
 
 After VirtualBox installation, please install Vagrant:
-[Vagrant Download]]
+[Vagrant Download]
 
 
 ## Install Git
