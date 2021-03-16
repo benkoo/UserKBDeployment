@@ -61,6 +61,12 @@ You may trigger this sequence of actions using the following command:
 vagrant up
 ```
 
+Note: Windows users might witness some hickups after Vagrant is installed. When running vagrant up, it might provide a 
+message saying that your Hyper-Visor or VT-x options is disabled. You might need to go to BIOS or UEFI to turn it on.
+
+The sequence in rebooting your Windows machine and changing the BIOS or UEFI configurations can be found here:
+[Rebooting Windows into BIOS/UEFI]
+
 ## Use ssh to get into the Ubuntu-Linux instance running on VirtualBox
 
 After Vagrant launched the Ununtu-Linux intance successful, please use the following instruction to get into
@@ -70,14 +76,28 @@ vagrant ssh
 ```
 This should take you to the "vagrant" directory in that Ubuntu instance. 
 
+Note: Windows users are likely to face the issue of "`$\r` command not found" error message when executing script files.
+This is due to the incompatible end of line symbol set between Windows and other Unix variants. To resolve this problem,
+one needs to install dos2unix command on Linux, and run dos2unix on the script files.
+
+Please type in the following command in a Command Line Interface on Windows environment, within the vagrant-Linux 
+command prompt:
+```
+sudo add-apt-repository universe
+sudo apt update && sudo apt install dos2unix
+# Then, go to the directory that contains script files, run the following command.
+sudo dos2unix *.sh
+```
+Some useful references can be found here: [Ask Ubuntu's Answer on End of Line problems]
+
 ## Launch the intallation script in the InstallationScript directory
 
 To ease the installation process, this instance of Ubuntu-Linux already has access to your host machine's directory: InstallationScript.
 
 Please run the following commands to install Docker and other relevant software in your Ubuntu-Linux system.
 ```
-cd InstallationScript
-./installDockerAndOtherSoftware
+cd data
+./installDockerAndOtherSoftware.sh
 ```
 
 ## Launch MediaWiki from Command Line
@@ -85,14 +105,13 @@ cd InstallationScript
 Once Docker and other supporting software has been installed, just run the following command to start MediaWiki.
 Note that it will first install MariaDB, and then MediaWiki, it will take a while.
 ```
-./up
+./up.sh
 ```
 
 Due to the massive size (about 2Gb +) of softwrae downloads, the download procedure might hang, if it waits for too long, just use 
-the following command to stop the download process, and relaunch the "./up" command.
+the following command to stop the download process, and relaunch the "./up.sh" command.
 ```
 service docker stop
-./up
 ```
 
 
@@ -100,3 +119,5 @@ service docker stop
 [Vagrant Download]: https://www.vagrantup.com/downloads
 [Git Installation]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 [Docker environment]: https://docs.docker.com/engine
+[Rebooting Windows into BIOS/UEFI]:https://2nwiki.2n.cz/pages/viewpage.action?pageId=75202968
+[Ask Ubuntu's Answer on End of Line problems]:https://askubuntu.com/questions/966488/how-do-i-fix-r-command-not-found-errors-running-bash-scripts-in-wsl
