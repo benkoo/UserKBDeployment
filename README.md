@@ -51,7 +51,7 @@ use the proper command line tool and type the following command:
 cd UserKBDeployment
 ```
 
-## Launch vagrant up
+## Launch vagrant processes
 
 In the top level working directory, there is a text file named: "VagrantFile". This file contains the configuration 
 information regarding how to download and launch a VirtualBox Ubuntu instance.
@@ -90,10 +90,12 @@ sudo dos2unix *.sh
 ```
 Some useful references can be found here: [Ask Ubuntu's Answer on End of Line problems]
 
-## Launch the intallation script in the InstallationScript directory
+## Launch the installation script in the InstallationScript directory
 
 To ease the installation process, this instance of Ubuntu-Linux already has access to your host machine's directory: InstallationScript.
 
+This installation script will copy the initialData.zip in the vagrant_data/ directory to Ubuntu-Linux's /data directory and decompress
+all the data content into /data/initialData/ directory.
 Please run the following commands to install Docker and other relevant software in your Ubuntu-Linux system.
 ```
 cd data
