@@ -16,7 +16,7 @@ that individual users can try out a cluster of services on personal desktops or 
 to the cloud. 
 
 ----
-## Software Installation on the Host Machine
+## Host Machine Software Installation 
 
 ### Install VirtualBox (Tested with 6.1.18)
 
@@ -120,8 +120,7 @@ the following command to stop the download process, and relaunch the "./up.sh" c
 service docker stop
 ```
 
-## References
-
+## References(All links' references are stored under this hidden portion of the page.)
 [VirtualBox Download]: https://www.virtualbox.org/wiki/Downloads
 [Vagrant Download]: https://www.vagrantup.com/downloads
 [Git Installation]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
