@@ -11,7 +11,7 @@ services:
     image: xlpsystem/mediawiki:20180827140844
     restart: always
     ports:
-    - 81:80
+    - 5151:80
     volumes:
     - /data/initialData/mediawiki:/xlp_data
     - /data/initialData/mediawiki_dev:/xlp_dev

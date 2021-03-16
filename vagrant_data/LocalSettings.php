@@ -30,7 +30,7 @@ $wgMetaNamespace = "XLP_wiki";
 $wgScriptPath = "";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "http://localhost:81";
+$wgServer = "http://localhost:5151";
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
