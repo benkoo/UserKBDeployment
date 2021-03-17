@@ -113,6 +113,16 @@ Note that it will first install MariaDB, and then MediaWiki, it will take a whil
 ./up.sh
 ```
 
+After it shows the docker processes have done launching, one can use http://localhost:5151 to access the MediaWiki docker service.
+
+### Backing up the entire Wiki to initialData.zip
+
+Whenever user feel like backing up the entire data set, including content in the MariaDB database, as well as all the MediaFile
+in the images directory under mediawiki/, just type the following instruction.
+```
+./backup.sh
+```
+
 ## Exception Handling
 Due to the massive size (about 2Gb +) of softwrae downloads, the download procedure might hang, if it waits for too long, just use 
 the following command to stop the download process, and relaunch the "./up.sh" command.
