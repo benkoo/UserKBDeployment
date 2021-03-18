@@ -3,7 +3,7 @@
 ----
 
 To enable Personalized Data Ownership, this project provides the deployment guidance to 
-allow inviduals install and maintain MediaWiki Knowledge Stores on Laptop or Personal Desktops.
+allow individuals install and maintain MediaWiki Knowledge Stores on Laptop or Personal Desktops.
 
 The goal is to help indivdual users to operate a full-featured MediaWiki service as a document 
 server that contains all key-value paired references to personalized knowledge content.
