@@ -23,6 +23,8 @@ to the cloud.
 Please go to the following link and download appropriate installation binary for your platform.
 [VirtualBox Download].
 
+Mac: If you're using a mac OS then download OS X hosts
+
 
 ### Install Vagrant
 
