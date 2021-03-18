@@ -16,6 +16,13 @@ that individual users can try out a cluster of services on personal desktops or 
 to the cloud. 
 
 ----
+
+# Required Computing Resource
+If you have a computer with more than 2 cores and 8GB of memory, the computer should be able to execute 
+the following tasks. Make sure you reboot your computer before starting all these procedures. Sometimes,
+background processes or users that were logged in to the same computer might occupy significant resources. 
+Therefore, restarting at this time would be a good practice.
+
 ## Host Machine Software Installation 
 
 ### Install VirtualBox (Tested with 6.1.18)
