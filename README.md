@@ -17,7 +17,7 @@ to the cloud.
 
 ----
 
-# Required Computing Resource
+# Restarting Your Computer Recommended
 If you have a computer with more than 2 cores and 8GB of memory, the computer should be able to execute 
 the following tasks. Make sure you reboot your computer before starting all these procedures. Sometimes,
 background processes or users that were logged in to the same computer might occupy significant resources. 
