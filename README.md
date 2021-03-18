@@ -3,7 +3,7 @@
 ----
 
 To enable Personalized Data Ownership, this project provides the deployment guidance to 
-allow inviduals install and maintain MediaWiki Knowledge Stores on Laptop or Personal Desktops.
+allow individuals install and maintain MediaWiki Knowledge Stores on Laptop or Personal Desktops.
 
 The goal is to help indivdual users to operate a full-featured MediaWiki service as a document 
 server that contains all key-value paired references to personalized knowledge content.
@@ -16,12 +16,21 @@ that individual users can try out a cluster of services on personal desktops or 
 to the cloud. 
 
 ----
+
+# Restarting Your Computer Recommended
+If you have a computer with more than 2 cores and 8GB of memory, the computer should be able to execute 
+the following tasks. Make sure you reboot your computer before starting all these procedures. Sometimes,
+background processes or users that were logged in to the same computer might occupy significant resources. 
+Therefore, restarting at this time would be a good practice.
+
 ## Host Machine Software Installation 
 
 ### Install VirtualBox (Tested with 6.1.18)
 
 Please go to the following link and download appropriate installation binary for your platform.
 [VirtualBox Download].
+
+Mac: If you're using a mac OS then download OS X hosts
 
 
 ### Install Vagrant
@@ -111,6 +120,16 @@ Once Docker and other supporting software has been installed, just run the follo
 Note that it will first install MariaDB, and then MediaWiki, it will take a while.
 ```
 ./up.sh
+```
+
+After it shows the docker processes have done launching, one can use http://localhost:5151 to access the MediaWiki docker service.
+
+### Backing up the entire Wiki to initialData.zip
+
+Whenever user feel like backing up the entire data set, including content in the MariaDB database, as well as all the MediaFile
+in the images directory under mediawiki/, just type the following instruction.
+```
+./backup.sh
 ```
 
 ## Exception Handling

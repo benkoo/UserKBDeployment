@@ -7,4 +7,4 @@ sudo docker-compose --file xlpsystem_config.yml up -d
 echo waiting for docker to launch and then, replace the  LocalSettings.php
 sleep 5
 sudo cp LocalSettings.php /data/initialData/mediawiki/.
-echo Ready to serve MediaWiki, enjoy.
+echo MediaWiki is being served on http://localhost:5151
