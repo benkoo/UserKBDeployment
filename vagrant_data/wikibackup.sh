@@ -2,7 +2,7 @@
 
 # Define the file name format and variable name
 FilePrefix="XLPDATA"
-DATE=$(date +"%m-%d-%Y")
+DATE=$(date +"%m-%d-%Y_%H_%M_%S_%Z")
 FilePostfix=".zip"
 
 # Construct the file name string
