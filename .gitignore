@@ -1,3 +1,6 @@
+# Ignore local back up files
+XLPDATA*.zip
+
 # Ignore Mac Temp File
 */.DS_Store
 
