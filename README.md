@@ -127,9 +127,11 @@ After it shows the docker processes have done launching, one can use http://loca
 ### Backing up the entire Wiki to initialData.zip
 
 Whenever user feel like backing up the entire data set, including content in the MariaDB database, as well as all the MediaFile
-in the images directory under mediawiki/, just type the following instruction.
+in the images directory under mediawiki/, just type the following instruction. The zip-compressed file will be named with the 
+the following format: XLPDATA%month%day%year.zip.
+
 ```
-./backup.sh
+./wikibackup.sh
 ```
 
 ## Exception Handling
