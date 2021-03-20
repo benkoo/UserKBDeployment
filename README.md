@@ -46,19 +46,22 @@ Your system must have Git installed. Therefore, please go to the website to inst
 
 ## Grab code from Git, and Execute the installation activities
 
+
 ### Working from this Project Directory
 
 After Git has been installed on your local system, please go to a command line interface (CLI), and use Git 
 to download the this project. To a local directory.
 
+Note: On Mac, a typical CLI would be the Terminal.app. On Windows 10, I would recommend you to reboot your machine at this
+time before continuing this list of instructions. Vagrant configuration might not take place after Git is installed. 
+Therefore, one could use other command line app, such as CMD or search for the PowerShell application as your command line
+interface. On Linux platforms, use the proper command line tool and type the following command: 
 ```
 git clone https://github.com/benkoo/UserKBDeployment.git
 ```
 
 Then, "change directory" (type "cd" in Command Line Prompt) to the top level directory of this project. 
-On Mac, a typical CLI would be the Terminal.app. On Windows 10, due to system configuration problems, one should avoid using GitBash, 
-use other command line app, such as CMD or search for other Terminal-like applications. On Linux platforms, 
-use the proper command line tool and type the following command: 
+
 
 ```
 cd UserKBDeployment
