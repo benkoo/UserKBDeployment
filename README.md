@@ -134,6 +134,23 @@ the following format: XLPDATA%month%day%year.zip.
 ```
 ./wikibackup.sh
 ```
+If you want to repeatedly backup the entire database and all media files in the MediaWiki service, you may just type the following
+instruction:
+
+```
+sudo crontab -e
+```
+
+Then, choose an editor of your choice, by typing "1". And put in this line at the end of the crontab file:
+```
+0 * * * * /home/vagrant/data/backuplatest.sh
+```
+This configuration means the backuplatest.sh script will be run once everyhour.
+The backed up file will show up in your host machine's vagrant_data/ directory, the file name is: XLPDATA_LATEST.zip
+This file will be overwritten every hour.
+
+
+
 
 ## Exception Handling
 Due to the massive size (about 2Gb +) of softwrae downloads, the download procedure might hang, if it waits for too long, just use 
