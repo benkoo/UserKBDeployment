@@ -56,7 +56,8 @@ git clone https://github.com/benkoo/UserKBDeployment.git
 ```
 
 Then, "change directory" (type "cd" in Command Line Prompt) to the top level directory of this project. 
-On Mac, a typical CLI would be the Terminal.app. On Windows 10, one should use GitBash. On Linux platforms, 
+On Mac, a typical CLI would be the Terminal.app. On Windows 10, due to system configuration problems, one should avoid using GitBash, 
+use other command line app, such as CMD or search for other Terminal-like applications. On Linux platforms, 
 use the proper command line tool and type the following command: 
 
 ```
