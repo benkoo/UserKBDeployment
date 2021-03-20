@@ -162,7 +162,7 @@ the following command to stop the download process, and relaunch the "./up.sh" c
 service docker stop
 ```
 
-## References(All reference links' references are hidden.)
+## References(reference content hidden, viewable in raw textform.)
 [VirtualBox Download]: https://www.virtualbox.org/wiki/Downloads
 [Vagrant Download]: https://www.vagrantup.com/downloads
 [Git Installation]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
