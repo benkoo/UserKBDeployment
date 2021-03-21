@@ -38,6 +38,9 @@ Mac: If you're using a mac OS then download OS X hosts
 After VirtualBox installation, please install Vagrant:
 [Vagrant Download]
 
+Note: For Mac OS X, It is preferred to have Big Sur 11.2.3 version running on your host machine. Prior versions seems
+to have issues with Vagrant.
+
 
 ### Install Git
 
