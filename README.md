@@ -20,8 +20,10 @@ At the time of this writing, we have tested on Mac, Windows 10, and Linux comput
 of operating systems have worked. 
 
  Windows 10 Home or Professional: version 20H2
+ 
  Mac OS X: Big Sur 11.2.3 (11.1 and 11.2 seems to have problems with Vagrant)
 Catalina 10.5.7 has shown to work with Earlier models of Mac Book, but has problems with Vagrant for more recent machines.
+ 
  Linux Ubuntu 16.04 +
 
 ----
