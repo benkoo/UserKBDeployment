@@ -15,6 +15,15 @@ using standardized Docker images. Overtime, this project will deploy these Docke
 that individual users can try out a cluster of services on personal desktops or laptops, and eventually deploy 
 to the cloud. 
 
+## Operating System Requirements
+At the time of this writing, we have tested on Mac, Windows 10, and Linux computers. The following versions
+of operating systems have worked. 
+
+Windows 10 Home or Professional: version 20H2
+Mac OS X: Big Sur 11.2.3 (11.1 and 11.2 seems to have problems with Vagrant)
+Catalina 10.5.7 has shown to work with Earlier models of Mac Book, but has problems with Vagrant for more recent machines.
+Linux Ubuntu 16.04 +
+
 ----
 
 # Restarting Your Computer Recommended
@@ -36,7 +45,7 @@ Please go to the following link and download appropriate installation binary for
 After VirtualBox installation, please install Vagrant:
 [Vagrant Download]
 
-Note: For Mac OS X, It is preferred to have Big Sur 11.2.3 version or later running on your host machine. Prior versions of Big Sur such as 11.1 and 11.2 seems
+Note: If you see problems when running Vagrant, it might be solved by updating your Operating System. For Mac OS X, It is preferred to have Big Sur 11.2.3 version or later running on your host machine. Prior versions of Big Sur such as 11.1 and 11.2 seems
 to have issues with Vagrant.
 
 
