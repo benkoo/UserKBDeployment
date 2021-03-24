@@ -13,6 +13,7 @@ sudo apt-get install \
     lsb-release \
     zip \
     unzip \
+    cron \
     dos2unix
 
 sudo dos2unix *.sh

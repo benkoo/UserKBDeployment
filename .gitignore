@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 # Ignore mountPoint
 
 */mountPoint/
+=======
+# Ignore local back up files
+XLPDATA*.zip
+>>>>>>> 35bdc355c4a7459eb82357d6690736dac068ec48
 
 # Ignore Mac Temp File
 .DS_Store

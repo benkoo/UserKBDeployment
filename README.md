@@ -15,6 +15,17 @@ using standardized Docker images. Overtime, this project will deploy these Docke
 that individual users can try out a cluster of services on personal desktops or laptops, and eventually deploy 
 to the cloud. 
 
+## Operating System Requirements
+At the time of this writing, we have tested on Mac, Windows 10, and Linux computers. The following versions
+of operating systems have worked. 
+
+ Windows 10 Home or Professional: version 20H2
+ 
+ Mac OS X: Big Sur 11.2.3 (11.1 and 11.2 seems to have problems with Vagrant)
+Catalina 10.5.7 has shown to work with Earlier models of Mac Book, but has problems with Vagrant for more recent machines.
+ 
+ Linux Ubuntu 16.04 +
+
 ----
 
 # Restarting Your Computer Recommended
@@ -30,13 +41,14 @@ Therefore, restarting at this time would be a good practice.
 Please go to the following link and download appropriate installation binary for your platform.
 [VirtualBox Download].
 
-Mac: If you're using a mac OS then download OS X hosts
-
 
 ### Install Vagrant
 
 After VirtualBox installation, please install Vagrant:
 [Vagrant Download]
+
+Note: If you see problems when running Vagrant, it might be solved by updating your Operating System. For Mac OS X, It is preferred to have Big Sur 11.2.3 version or later running on your host machine. Prior versions of Big Sur such as 11.1 and 11.2 seems
+to have issues with Vagrant.
 
 
 ### Install Git
@@ -46,18 +58,22 @@ Your system must have Git installed. Therefore, please go to the website to inst
 
 ## Grab code from Git, and Execute the installation activities
 
+
 ### Working from this Project Directory
 
 After Git has been installed on your local system, please go to a command line interface (CLI), and use Git 
 to download the this project. To a local directory.
 
+Note: On Mac, a typical CLI would be the Terminal.app. On Windows 10, I would recommend you to reboot your machine at this
+time before continuing this list of instructions. Vagrant configuration might not take place after Git is installed. 
+Therefore, one could use other command line app, such as CMD or search for the PowerShell application as your command line
+interface. On Linux platforms, use the proper command line tool and type the following command: 
 ```
 git clone https://github.com/benkoo/UserKBDeployment.git
 ```
 
 Then, "change directory" (type "cd" in Command Line Prompt) to the top level directory of this project. 
-On Mac, a typical CLI would be the Terminal.app. On Windows 10, one should use GitBash. On Linux platforms, 
-use the proper command line tool and type the following command: 
+
 
 ```
 cd UserKBDeployment
@@ -127,10 +143,29 @@ After it shows the docker processes have done launching, one can use http://loca
 ### Backing up the entire Wiki to initialData.zip
 
 Whenever user feel like backing up the entire data set, including content in the MariaDB database, as well as all the MediaFile
-in the images directory under mediawiki/, just type the following instruction.
+in the images directory under mediawiki/, just type the following instruction. The zip-compressed file will be named with the 
+the following format: XLPDATA%month%day%year.zip.
+
 ```
-./backup.sh
+./wikibackup.sh
 ```
+If you want to repeatedly backup the entire database and all media files in the MediaWiki service, you may just type the following
+instruction:
+
+```
+sudo crontab -e
+```
+
+Then, choose an editor of your choice, by typing "1". And put in this line at the end of the crontab file:
+```
+0 * * * * /home/vagrant/data/backuplatest.sh
+```
+This configuration means the backuplatest.sh script will be run once everyhour.
+The backed up file will show up in your host machine's vagrant_data/ directory, the file name is: XLPDATA_LATEST.zip
+This file will be overwritten every hour.
+
+
+
 
 ## Exception Handling
 Due to the massive size (about 2Gb +) of softwrae downloads, the download procedure might hang, if it waits for too long, just use 
@@ -139,7 +174,7 @@ the following command to stop the download process, and relaunch the "./up.sh" c
 service docker stop
 ```
 
-## References(All links' references are stored under this hidden portion of the page.)
+## References(reference content hidden, viewable in raw text form.)
 [VirtualBox Download]: https://www.virtualbox.org/wiki/Downloads
 [Vagrant Download]: https://www.vagrantup.com/downloads
 [Git Installation]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
