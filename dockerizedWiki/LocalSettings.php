@@ -19,7 +19,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 ## Uncomment this to disable output compression
 # $wgDisableOutputCompression = true;
 
-$wgSitename = "SOMEWIKI";
+$wgSitename = "XLP:ROOT";
 
 ## The URL base path to the directory containing the wiki;
 ## defaults for all runtime URL paths are based off of this.
@@ -76,6 +76,9 @@ $wgMemCachedServers = [];
 $wgEnableUploads = true;
 $wgUseImageMagick = true;
 $wgImageMagickConvertCommand = "/usr/bin/convert";
+
+## Set the maximum file update size to about 20MB.
+$wgMaxUploadSize = 20000000;
 
 # InstantCommons allows wiki to use images from https://commons.wikimedia.org
 $wgUseInstantCommons = false;
