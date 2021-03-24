@@ -1,3 +1,7 @@
+# Ignore mountPoint
+
+*/mountPoint/
+
 # Ignore Mac Temp File
 .DS_Store
 */.DS_Store
