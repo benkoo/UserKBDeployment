@@ -28,8 +28,12 @@ fi
 # However, it will not work in Mac OS X, since it is still using Bash v 3.2
 LOWERCASE_CURRENTDIR="$(tr [A-Z] [a-z] <<< "${PWD##*/}")"
 MW_CONTAINER=$LOWERCASE_CURRENTDIR"_mediawiki_1"
-BACKUPSCRIPTFULLPATH="/var/www/html/images/backupAllContentData.sh"
-RESOTRESCRIPTFULLPATH="/var/www/html/images/restoreAllContentData.sh"
+
+# This variable should have the same value as the variable $wgResourceBasePath in LocalSettings.php
+ResourceBasePath="/var/www/html"
+
+BACKUPSCRIPTFULLPATH=$ResourceBasePath"/images/backup.sh"
+RESOTRESCRIPTFULLPATH=$ResourceBasePath"/images/restore.sh"
 
 echo "Executing: " docker exec $MW_CONTAINER $BACKUPSCRIPTFULLPATH
 docker exec $MW_CONTAINER $BACKUPSCRIPTFULLPATH
@@ -46,6 +50,7 @@ fi
 docker-compose up -d
 # After docker processes are ready, reload the data from earlier dump
 echo "Loading data from earlier backups..."
+echo "Executing: " docker exec $MW_CONTAINER $RESOTRESCRIPTFULLPATH
 docker exec $MW_CONTAINER $RESOTRESCRIPTFULLPATH
 
 
