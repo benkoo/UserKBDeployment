@@ -8,7 +8,8 @@ if [[ $(which docker) && $(docker --version) ]]; then
     # command
     case "$OSTYPE" in
       darwin*)  echo "$OSTYPE should install Docker Desktop by following this link https://docs.docker.com/docker-for-mac/install/" ;; 
-      msys*)    echo "$OSTYPE should install Docker Desktop by following this link https://docs.docker.com/docker-for-mac/install/" ;;
+      msys*)    echo "$OSTYPE should install Docker Desktop by following this link https://docs.docker.com/docker-for-windows/install/" ;;
+      cygwin*)  echo "$OSTYPE should install Docker Desktop by following this link https://docs.docker.com/docker-for-windows/install/" ;;
       linux*)   echo "$OSTYPE will run the following installation script" ;;
       *)        echo "Sorry, this $OSTYPE might not have Docker implementation" ;;
     esac
