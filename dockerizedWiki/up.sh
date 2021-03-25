@@ -36,7 +36,7 @@ BACKUPSCRIPTFULLPATH=$ResourceBasePath"/images/backup.sh"
 RESOTRESCRIPTFULLPATH=$ResourceBasePath"/images/restore.sh"
 
 echo "Executing: " docker exec $MW_CONTAINER $BACKUPSCRIPTFULLPATH
-docker exec $MW_CONTAINER $BACKUPSCRIPTFULLPATH
+eval docker exec $MW_CONTAINER $BACKUPSCRIPTFULLPATH
 # stop all docker processes
 docker-compose down --volumes
 
@@ -51,6 +51,6 @@ docker-compose up -d
 # After docker processes are ready, reload the data from earlier dump
 echo "Loading data from earlier backups..."
 echo "Executing: " docker exec $MW_CONTAINER $RESOTRESCRIPTFULLPATH
-docker exec $MW_CONTAINER $RESOTRESCRIPTFULLPATH
+eval docker exec $MW_CONTAINER $RESOTRESCRIPTFULLPATH
 
 
