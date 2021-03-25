@@ -11,23 +11,25 @@ if [[ $(which docker) && $(docker --version) ]]; then
       msys*)    echo "$OSTYPE should install Docker Desktop by following this link https://docs.docker.com/docker-for-windows/install/" ;;
       cygwin*)  echo "$OSTYPE should install Docker Desktop by following this link https://docs.docker.com/docker-for-windows/install/" ;;
       linux*)
+        echo "Some $OSTYPE distributions could install Docker, we will try to install Docker for you..." 
         ./scripts/installDockerForUbuntu.sh   
-        echo "$OSTYPE will run the following installation script" ;;
+        echo "Installation complete, setting up the sudo su command, you will need the root access to this linux machine."
+        sudo su ;;
       *)        echo "Sorry, this $OSTYPE might not have Docker implementation" ;;
     esac
 fi
 
 
 # If docker is running already, stop all docker processes
-sudo docker-compose down --volumes
+docker-compose down --volumes
 
 # If the mountPoint directory doesn't exist, 
 # Decompress the InitialDataPackage to ./mountPoint 
 if [ ! -e ./mountPoint/ ]; then
-sudo tar -xzvf ./InitialDataPackage.tar.gz -C .
+tar -xzvf ./InitialDataPackage.tar.gz -C .
 fi
 
 # Start the docker processes
-sudo docker-compose up -d
+docker-compose up -d
 
 
