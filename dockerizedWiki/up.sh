@@ -21,9 +21,10 @@ fi
 
 
 # If docker is running already, first run a data dump before shutting down docker processes
-CURRENTDIR=${PWD##*/}
-CURRENTDIR="$(tr [A-Z] [a-z] <<< "$CURRENTDIR")"
-MW_CONTAINER=$CURRENTDIR"_mediawiki_1"
+# One can use the following instruction to find the current directory name withou the full path
+# CURRENTDIR=${PWD##*/}
+LOWERCASE_CURRENTDIR="$(tr [A-Z] [a-z] <<< "${PWD##*/}")"
+MW_CONTAINER=$LOWERCASE_CURRENTDIR"_mediawiki_1"
 BACKUPSCRIPTFULLPATH="/var/www/html/images/backupAllContentData.sh"
 RESOTRESCRIPTFULLPATH="/var/www/html/images/restoreAllContentData.sh"
 
