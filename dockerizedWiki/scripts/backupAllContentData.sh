@@ -1,12 +1,10 @@
 #! /bin/bash
 
-
-
 # This variable should have the same value as the variable $wgResourceBasePath in LocalSettings.php
 ResourceBasePath="/var/www/html"
 
 # Define the file name format and variable name
-FilePrefix="XLPDATA"
+FilePrefix="XLP"
 DATE=$(date +"%m-%d-%Y_%H_%M_%S_%Z")
 FilePostfix=".xml"
 
@@ -17,10 +15,10 @@ FileName=$FilePrefix$DATE$FilePostfix
 LATEST="LATEST"
 
 # If the XLPDATALATEST.xml doesn't exist in the specified directory, dump all data to the file with that name.
-if [ ! -e $ResourceBasePath/images/$FilePrefix$LATEST$FilePostfix ]; then
+# if [ ! -e $ResourceBasePath/images/$FilePrefix$LATEST$FilePostfix ]; then
 # Construct the file name string
 FileName=$FilePrefix$LATEST$FilePostfix
-fi
+# fi
 
 echo "Ready to dump all textual data into " $ResourceBasePath/images/$FileName
 

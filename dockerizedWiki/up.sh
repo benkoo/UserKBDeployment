@@ -23,6 +23,9 @@ fi
 # If docker is running already, first run a data dump before shutting down docker processes
 # One can use the following instruction to find the current directory name withou the full path
 # CURRENTDIR=${PWD##*/}
+# In Bash v4.0 or later, lower case can be obtained by a simple ResultString="${OriginalString,,}"
+# See https://stackoverflow.com/questions/2264428/how-to-convert-a-string-to-lower-case-in-bash
+# However, it will not work in Mac OS X, since it is still using Bash v 3.2
 LOWERCASE_CURRENTDIR="$(tr [A-Z] [a-z] <<< "${PWD##*/}")"
 MW_CONTAINER=$LOWERCASE_CURRENTDIR"_mediawiki_1"
 BACKUPSCRIPTFULLPATH="/var/www/html/images/backupAllContentData.sh"

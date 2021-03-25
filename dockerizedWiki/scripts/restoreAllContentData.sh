@@ -4,7 +4,7 @@
 ResourceBasePath="/var/www/html"
 
 # Define the file name format and variable name
-FilePrefix="XLPDATA"
+FilePrefix="XLP"
 FilePostfix=".xml"
 
 # Define the latest literal string
