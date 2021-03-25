@@ -1,6 +1,21 @@
 #! /bin/bash
 
-# First, stop all docker processes
+# Check if docker is installed or not
+if [[ $(which docker) && $(docker --version) ]]; then
+  echo "$OSTYPE has $(docker --version) installed"
+  else
+    echo "You need to Install docker"
+    # command
+    case "$OSTYPE" in
+      darwin*)  echo "$OSTYPE should install Docker Desktop by following this link https://docs.docker.com/docker-for-mac/install/" ;; 
+      msys*)    echo "$OSTYPE should install Docker Desktop by following this link https://docs.docker.com/docker-for-mac/install/" ;;
+      linux*)   echo "$OSTYPE will run the following installation script" ;;
+      *)        echo "Sorry, this $OSTYPE might not have Docker implementation" ;;
+    esac
+fi
+
+
+# If docker is running already, stop all docker processes
 docker-compose down --volumes
 
 # If the mountPoint directory doesn't exist, 
