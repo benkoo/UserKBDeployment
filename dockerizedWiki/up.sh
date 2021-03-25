@@ -20,7 +20,16 @@ if [[ $(which docker) && $(docker --version) ]]; then
 fi
 
 
-# If docker is running already, stop all docker processes
+# If docker is running already, first run a data dump before shutting down docker processes
+CURRENTDIR=${PWD##*/}
+CURRENTDIR="$(tr [A-Z] [a-z] <<< "$CURRENTDIR")"
+MW_CONTAINER=$CURRENTDIR"_mediawiki_1"
+BACKUPSCRIPTFULLPATH="/var/www/html/images/backupAllContentData.sh"
+RESOTRESCRIPTFULLPATH="/var/www/html/images/restoreAllContentData.sh"
+
+echo "Executing: " docker exec $MW_CONTAINER $BACKUPSCRIPTFULLPATH
+docker exec $MW_CONTAINER $BACKUPSCRIPTFULLPATH
+# stop all docker processes
 docker-compose down --volumes
 
 # If the mountPoint directory doesn't exist, 
@@ -31,5 +40,8 @@ fi
 
 # Start the docker processes
 docker-compose up -d
+# After docker processes are ready, reload the data from earlier dump
+echo "Loading data from earlier backups..."
+docker exec $MW_CONTAINER $RESOTRESCRIPTFULLPATH
 
 
