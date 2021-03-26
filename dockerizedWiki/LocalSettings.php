@@ -80,6 +80,13 @@ $wgImageMagickConvertCommand = "/usr/bin/convert";
 ## Set the maximum file update size to about 20MB.
 $wgMaxUploadSize = 20000000;
 
+## Add new file types that allows for more File Types to be uploaded.
+$wgFileExtensions = array_merge(
+    $wgFileExtensions, [
+        'pdf', 'ppt', 'jp2', 'doc', 'docx', 'xls', 'xlsx'
+    ]
+);
+
 # InstantCommons allows wiki to use images from https://commons.wikimedia.org
 $wgUseInstantCommons = false;
 
