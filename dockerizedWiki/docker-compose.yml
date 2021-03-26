@@ -5,7 +5,7 @@
 version: '3'
 services:
   database:
-    image: mariadb
+    image: bkoo/mariadb
     restart: always
     environment:
       # @see https://phabricator.wikimedia.org/source/mediawiki/browse/master/includes/DefaultSettings.php

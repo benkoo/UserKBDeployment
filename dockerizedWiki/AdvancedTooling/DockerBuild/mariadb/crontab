@@ -1,0 +1,1 @@
+* * * * * nice -n 19 mysqldump -u wikiuser -p my_wiki --password='example' -c | nice -n 19 gzip -9 > /var/lib/mysql/backup/backup.sql.gz
