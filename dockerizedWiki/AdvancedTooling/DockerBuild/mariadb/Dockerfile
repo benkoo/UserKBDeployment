@@ -15,4 +15,6 @@ ADD crontab /var/spool/cron/crontab/root
 # Give execution rights on the cron job
 RUN chmod 0644 /var/spool/cron/crontab/root
 
+RUN mkdir /var/lib/mysql/backup
+
 RUN crontab /var/spool/cron/crontab/root
