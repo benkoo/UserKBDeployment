@@ -38,6 +38,9 @@ COPY ./extensions/PdfHandler/ ${ResourceBasePath}/extensions/PdfHandler/
 # Copy PDFEmbed package to extensions/
 COPY ./extensions/PDFEmbed/ ${ResourceBasePath}/extensions/PDFEmbed/
 
+# Copy PDFEmbed package to extensions/
+COPY ./extensions/EmbedVideo/ ${ResourceBasePath}/extensions/EmbedVideo/
+
 # Copy the BackupAndRestore scripting package to MediaWiki's "extensions/" directory
 COPY ./extensions/BackupAndRestore/ ${ResourceBasePath}/extensions/BackupAndRestore/
 

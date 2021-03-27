@@ -87,7 +87,7 @@ $wgImageMagickConvertCommand = "/usr/bin/convert";
 ## Add new file types that allows for more File Types to be uploaded.
 $wgFileExtensions = array( 'png', 'gif', 'jpg', 'jpeg', 'doc',
     'xls', 'mpp', 'pdf', 'ppt', 'tiff', 'bmp', 'docx', 'xlsx',
-    'pptx', 'ps', 'odt', 'ods', 'odp', 'odg', 'zip'
+    'pptx', 'ps', 'odt', 'ods', 'odp', 'odg', 'mp4', 'zip'
 );
 
 $wgTrustedMediaFormats[] = 'application/zip';
@@ -198,6 +198,9 @@ $wgPdfEmbed['width'] = 800;
 
 // Default height for the PDF object container.
 $wgPdfEmbed['height'] = 1090;
+
+// Enable Media Playing
+wfLoadExtension("EmbedVideo");
 
 //Allow user the usage of the pdf tag
 $wgGroupPermissions['*']['embed_pdf'] = true;
