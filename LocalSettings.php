@@ -77,15 +77,20 @@ $wgEnableUploads = true;
 $wgUseImageMagick = true;
 $wgImageMagickConvertCommand = "/usr/bin/convert";
 
-## Set the maximum file update size to about 20MB.
-$wgMaxUploadSize = 20000000;
+## Set the maximum file update size to about 50MB.
+# This number is already set in the docker image's /usr/local/etc/php/php.ini
+# $wgMaxUploadSize = 50000000;
+
+#ini_set( 'post_max_size', '50M' );
+#ini_set( 'upload_max_filesize', '50M' );
 
 ## Add new file types that allows for more File Types to be uploaded.
-$wgFileExtensions = array_merge(
-    $wgFileExtensions, [
-        'pdf', 'ppt', 'jp2', 'doc', 'docx', 'xls', 'xlsx'
-    ]
+$wgFileExtensions = array( 'png', 'gif', 'jpg', 'jpeg', 'doc',
+    'xls', 'mpp', 'pdf', 'ppt', 'tiff', 'bmp', 'docx', 'xlsx',
+    'pptx', 'ps', 'odt', 'ods', 'odp', 'odg', 'zip'
 );
+
+$wgTrustedMediaFormats[] = 'application/zip';
 
 # InstantCommons allows wiki to use images from https://commons.wikimedia.org
 $wgUseInstantCommons = false;
@@ -183,3 +188,16 @@ wfLoadExtension( 'WikiEditor' );
 # The following extensions are added in the Dockerfile implemented for bkoo/mediawiki:1.35
 
 wfLoadExtension( 'intersection' );
+
+# Try to handle PDF uploaded files
+wfLoadExtension( 'PdfHandler' );
+wfLoadExtension( 'PDFEmbed' );
+
+// Default width for the PDF object container.
+$wgPdfEmbed['width'] = 800;
+
+// Default height for the PDF object container.
+$wgPdfEmbed['height'] = 1090;
+
+//Allow user the usage of the pdf tag
+$wgGroupPermissions['*']['embed_pdf'] = true;

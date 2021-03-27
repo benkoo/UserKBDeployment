@@ -27,7 +27,7 @@ fi
 # See https://stackoverflow.com/questions/2264428/how-to-convert-a-string-to-lower-case-in-bash
 # However, it will not work in Mac OS X, since it is still using Bash v 3.2
 LOWERCASE_CURRENTDIR="$(tr [A-Z] [a-z] <<< "${PWD##*/}")"
-# MW_CONTAINER=$LOWERCASE_CURRENTDIR"_mediawiki_1"
+MW_CONTAINER=$LOWERCASE_CURRENTDIR"_mediawiki_1"
 DB_CONTAINER=$LOWERCASE_CURRENTDIR"_database_1"
 
 # This variable should have the same value as the variable $wgResourceBasePath in LocalSettings.php
@@ -49,9 +49,14 @@ fi
 
 # Start the docker processes
 docker-compose up -d
+
+
 # After docker processes are ready, reload the data from earlier dump
 # echo "Loading data from earlier backups..."
 # echo "Executing: " docker exec $MW_CONTAINER $RESOTRESCRIPTFULLPATH
 # docker exec $MW_CONTAINER $RESOTRESCRIPTFULLPATH
 
+echo "Started cron job for repeated mysqldump data backup"
 docker exec $DB_CONTAINER service cron start
+
+echo "Please go to a browser and use http://localhost:8080 to test the service"
