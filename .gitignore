@@ -1,6 +1,6 @@
 
 # Ignore mountPoint
-./mountPoint/
+mountPoint/
 */mountPoint/
 
 # Ignore local back up files
