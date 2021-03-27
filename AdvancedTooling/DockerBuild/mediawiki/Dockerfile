@@ -4,33 +4,40 @@ FROM mediawiki
 # Define the ResourceBasePath in MediaWiki as a variable name: ResourceBasePath
 ENV ResourceBasePath /var/www/html
 
-# Specify the file name for the DynamicPageList extension package for MediaWiki 1.35
-ENV DPLPackageName intersection-REL1_35-f657385.tar.gz
+
+# Make sure that existing software are updated 
+RUN apt-get update 
+RUN apt-get install -y ghostscript
+RUN apt-get install -y libmagickwand-dev
+RUN apt-get install -y xpdf
+RUN apt-get install -y xvfb
+RUN rm -rf /var/lib/apt/lists/*
+
+RUN apt-get upgrade
 
 # Define working directory for the following commands
 WORKDIR ${ResourceBasePath}/extensions
 
-RUN curl https://extdist.wmflabs.org/dist/extensions/${DPLPackageName} > ${DPLPackageName}
-RUN tar -xzf ${DPLPackageName} -C .
-RUN rm ${DPLPackageName}
+RUN apt update
+RUN apt install -y nodejs npm
+RUN git clone https://gerrit.wikimedia.org/r/3d2png
+RUN cd 3d2png
+RUN npm install
 
-# Make sure that existing software are updated 
-RUN apt-get update -y
-RUN apt-get upgrade -y
+# Copy 3D package to extensions/
+COPY ./extensions/3D/ ${ResourceBasePath}/extensions/3D/
 
-RUN apt update 
+# Copy 3DAlloy package to extensions/
+COPY ./extensions/3DAlloy/ ${ResourceBasePath}/extensions/3DAlloy/
 
-# Install Ghostscript 
-RUN apt-get install -y ghostscript
+# Copy StlHandler package to extensions/
+COPY ./extensions/StlHandler/ ${ResourceBasePath}/extensions/StlHandler/
 
-# RUN apt install --assume-yes php-imagick
-RUN apt-get install -y libmagickwand-dev
+# Copy MultimediaViewer package to extensions/
+COPY ./extensions/MultimediaViewer/ ${ResourceBasePath}/extensions/MultimediaViewer/
 
-# Install ImageMagick and its php extensions
-# RUN apt-get install php-imagick
-
-# Install xpdf
-RUN apt-get install -y xpdf
+# Copy intersection package to extensions/
+COPY ./extensions/intersection/ ${ResourceBasePath}/extensions/intersection/
 
 # Copy PdfHandler package to extensions/
 COPY ./extensions/PdfHandler/ ${ResourceBasePath}/extensions/PdfHandler/
@@ -45,11 +52,17 @@ COPY ./extensions/EmbedVideo/ ${ResourceBasePath}/extensions/EmbedVideo/
 COPY ./extensions/BackupAndRestore/ ${ResourceBasePath}/extensions/BackupAndRestore/
 
 # Copy the php.ini with desired upload_max_filesize into the php directory.
-COPY ./resources/php.ini /usr/local/etc/php/php.ini
+ENV PHPConfigurationPath /usr/local/etc/php
+COPY ./resources/php.ini ${PHPConfigurationPath}/php.ini
 
 # Copy the $wgLogo image to the container
 COPY ./resources/xlp.png ${ResourceBasePath}/resources/assets/xlp.png
 
+# Copy the mime.types to the container
+COPY ./resources/mime.types ${ResourceBasePath}/includes/mime.types
+
+# Copy the mime.info to the container
+COPY ./resources/mime.info ${ResourceBasePath}/includes/mime.info
 
 # The service cron start instruction should be kicked off by the "up.sh" script
 # Directly use the following CMD here always cause the MediaWiki service to hang.

@@ -87,8 +87,18 @@ $wgImageMagickConvertCommand = "/usr/bin/convert";
 ## Add new file types that allows for more File Types to be uploaded.
 $wgFileExtensions = array( 'png', 'gif', 'jpg', 'jpeg', 'doc',
     'xls', 'mpp', 'pdf', 'ppt', 'tiff', 'bmp', 'docx', 'xlsx',
-    'pptx', 'ps', 'odt', 'ods', 'odp', 'odg', 'mp4', 'zip'
+    'pptx', 'ps', 'odt', 'ods', 'odp', 'odg', 'mp4', 'zip',
+    'stl', 'sla'
 );
+
+$wgFileExtensions = array_merge(
+    $wgFileExtensions, array(
+        'json', '3dj', '3djson', 'three',
+        'buff', 'buffjson',
+        'obj',
+        'stl', 'stlb'
+    )
+  );
 
 $wgTrustedMediaFormats[] = 'application/zip';
 
@@ -193,6 +203,8 @@ wfLoadExtension( 'intersection' );
 wfLoadExtension( 'PdfHandler' );
 wfLoadExtension( 'PDFEmbed' );
 
+
+
 // Default width for the PDF object container.
 $wgPdfEmbed['width'] = 800;
 
@@ -202,5 +214,28 @@ $wgPdfEmbed['height'] = 1090;
 // Enable Media Playing
 wfLoadExtension("EmbedVideo");
 
+wfLoadExtension( 'MultimediaViewer' );
+
 //Allow user the usage of the pdf tag
 $wgGroupPermissions['*']['embed_pdf'] = true;
+
+$wgTrustedMediaFormats[] = 'application/sla';
+
+$wg3dProcessor = [
+    '/usr/bin/xvfb-run',
+    '-a',
+    '-s',
+    '-ac -screen 0 1280x1024x24',
+    '/var/www/html/extensions/3d2png/3d2png.js'
+];
+
+$wgMediaViewerExtensions['stl'] = 'mmv.3d';
+
+wfLoadExtension( '3D' );
+wfLoadExtension( 'StlHandler' );
+
+wfLoadExtension( '3DAlloy' );
+
+$wgFileExtensions[] = 'stl'; 
+$wgTrustedMediaFormats[] = "application/sla";
+$wgTrustedMediaFormats[] = "application/octet-stream";
