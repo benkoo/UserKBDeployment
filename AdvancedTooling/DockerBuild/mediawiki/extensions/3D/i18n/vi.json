@@ -2,11 +2,19 @@
 	"@metadata": {
 		"authors": [
 			"Minh Nguyen",
+<<<<<<< HEAD
+=======
+			"Nguyễn Mạnh An",
+>>>>>>> a394479d3d8a7764d710b16d3adc10529546e06a
 			"Phjtieudoc"
 		]
 	},
 	"3d": "3D",
 	"3d-desc": "Hỗ trợ các định dạng tập tin 3D",
+<<<<<<< HEAD
+=======
+	"3d-patent": "Cấp bằng sáng chế:",
+>>>>>>> a394479d3d8a7764d710b16d3adc10529546e06a
 	"3d-nopatent": "Chưa chọn",
 	"3d-thumb-placeholder": "Đang tải hình thu nhỏ..."
 }
