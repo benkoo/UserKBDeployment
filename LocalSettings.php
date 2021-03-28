@@ -231,8 +231,8 @@ $wg3dProcessor = [
 
 $wgMediaViewerExtensions['stl'] = 'mmv.3d';
 
-wfLoadExtension( '3D' );
-wfLoadExtension( 'StlHandler' );
+#wfLoadExtension( '3D' );
+#wfLoadExtension( 'StlHandler' );
 
 wfLoadExtension( '3DAlloy' );
 
