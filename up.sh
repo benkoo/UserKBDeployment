@@ -56,7 +56,7 @@ docker-compose up -d
 # echo "Executing: " docker exec $MW_CONTAINER $RESOTRESCRIPTFULLPATH
 # docker exec $MW_CONTAINER $RESOTRESCRIPTFULLPATH
 
-echo "Started cron job for repeated mysqldump data backup"
+echo $DB_CONTAINER" will do regular database content dump."
 docker exec $DB_CONTAINER service cron start
 
 echo "Please go to a browser and use http://localhost:8080 to test the service"
