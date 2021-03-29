@@ -11,6 +11,9 @@ RUN apt-get install -y ghostscript
 RUN apt-get install -y libmagickwand-dev
 RUN apt-get install -y xpdf
 RUN apt-get install -y xvfb
+RUN apt-get -y install cron
+RUN apt-get -y install nano
+
 RUN rm -rf /var/lib/apt/lists/*
 
 RUN apt-get upgrade
@@ -67,3 +70,12 @@ COPY ./resources/mime.info ${ResourceBasePath}/includes/mime.info
 # The service cron start instruction should be kicked off by the "up.sh" script
 # Directly use the following CMD here always cause the MediaWiki service to hang.
 # CMD service cron start
+
+# Add crontab file in the cron directory
+ADD crontab /var/spool/cron/crontab/root
+
+# Give execution rights on the cron job
+RUN chmod 0644 /var/spool/cron/crontab/root
+
+# Make sure that Cron job always starts for the machine.
+RUN crontab /var/spool/cron/crontab/root
