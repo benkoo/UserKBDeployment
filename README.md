@@ -24,7 +24,7 @@ of operating systems have worked.
  
  Mac OS X: Big Sur 11.2.3 Note: in case you want to use the MultiVM features, you might encounter problems with Big Sur 11.1 and 11.2, more over, Catalina 10.5.7 has shown to work with Earlier models of Mac Book, but has problems with Vagrant for more recent machines.
  
- Linux Ubuntu 16.04 + Note: We have also tested the configurations in 20.04 in Virtual Machine settings.
+ Linux Ubuntu 16.04 + Note: We have also tested the configurations on Ubuntu 20.04 in [Oracle VirtualBox] environment.
 
 ----
 
@@ -79,5 +79,6 @@ If your Ubuntu system didn't have Docker installed, this script will detect it a
 [Docker Installation]: https://docs.docker.com/get-started/
 [Git Installation]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 [Docker environment]: https://docs.docker.com/engine
+[Oracle VirtualBox]: https://www.virtualbox.org
 [Rebooting Windows into BIOS/UEFI]:https://2nwiki.2n.cz/pages/viewpage.action?pageId=75202968
 [Ask Ubuntu's Answer on End of Line problems]:https://askubuntu.com/questions/966488/how-do-i-fix-r-command-not-found-errors-running-bash-scripts-in-wsl
