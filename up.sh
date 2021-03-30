@@ -48,7 +48,7 @@ if [ ! -e ./mountPoint/ ]; then
 fi
 
 # Start the docker processes
-docker-compose up -d
+docker-compose up -d --build
 
 
 # After docker processes are ready, reload the data from earlier dump

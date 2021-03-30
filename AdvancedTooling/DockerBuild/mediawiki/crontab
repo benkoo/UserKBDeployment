@@ -13,3 +13,5 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
 # |  |  |  |  |
 # *  *  *  *  * user-name  command to be executed
 * * * * * /var/www/html/extensions/BackupAndRestore/backupRegularly.sh
+## Import media files stored in /var/www/html/backup/ToBeUploaded directory and remove all of them after imported.
+* * * * * /var/www/html/extensions/BackupAndRestore/importMediaFiles.sh
