@@ -75,15 +75,6 @@ After it shows the docker processes have done launching, one can use http://loca
 If your Ubuntu system didn't have Docker installed, this script will detect it and try to install Docker for you. If you are using other platforms, you need to following instructions on http://docker.io.
 
 
-
-
-## Exception Handling
-Due to the massive size (about 2Gb +) of softwrae downloads, the download procedure might hang, if it waits for too long, just use 
-the following command to stop the download process, and relaunch the "./up.sh" command.
-```
-service docker stop
-```
-
 ## References(reference content hidden, viewable in raw text form.)
 [Docker Installation]: https://docs.docker.com/get-started/
 [Git Installation]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
