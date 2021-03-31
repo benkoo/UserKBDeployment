@@ -48,7 +48,7 @@ if [ ! -e ./mountPoint/ ]; then
 fi
 
 # Start the docker processes
-docker-compose up -d
+docker-compose up -d --build
 
 
 # After docker processes are ready, reload the data from earlier dump
@@ -56,7 +56,7 @@ docker-compose up -d
 # echo "Executing: " docker exec $MW_CONTAINER $RESOTRESCRIPTFULLPATH
 # docker exec $MW_CONTAINER $RESOTRESCRIPTFULLPATH
 
-echo "Started cron job for repeated mysqldump data backup"
-docker exec $DB_CONTAINER service cron start
+echo $MW_CONTAINER" will do regular database content dump."
+docker exec $MW_CONTAINER service cron start
 
 echo "Please go to a browser and use http://localhost:8080 to test the service"

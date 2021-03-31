@@ -219,7 +219,7 @@ wfLoadExtension( 'MultimediaViewer' );
 //Allow user the usage of the pdf tag
 $wgGroupPermissions['*']['embed_pdf'] = true;
 
-$wgTrustedMediaFormats[] = 'application/sla';
+wfLoadExtension( '3D' );
 
 $wg3dProcessor = [
     '/usr/bin/xvfb-run',
@@ -229,13 +229,16 @@ $wg3dProcessor = [
     '/var/www/html/extensions/3d2png/3d2png.js'
 ];
 
+
+$wgTrustedMediaFormats[] = "application/sla";
+$wgTrustedMediaFormats[] = "application/octet-stream";
+
 $wgMediaViewerExtensions['stl'] = 'mmv.3d';
 
-wfLoadExtension( '3D' );
-wfLoadExtension( 'StlHandler' );
+
+#wfLoadExtension( 'StlHandler' );
 
 wfLoadExtension( '3DAlloy' );
 
-$wgFileExtensions[] = 'stl'; 
-$wgTrustedMediaFormats[] = "application/sla";
-$wgTrustedMediaFormats[] = "application/octet-stream";
+# The following statement is only used for Semantic MediaWiki 
+# enableSemantics();
