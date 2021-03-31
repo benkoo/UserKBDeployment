@@ -60,6 +60,8 @@ COPY ./resources/php.ini ${PHPConfigurationPath}/php.ini
 
 # Copy the $wgLogo image to the container
 COPY ./resources/xlp.png ${ResourceBasePath}/resources/assets/xlp.png
+# COPY ./resources/xlp.png ${ResourceBasePath}/backup/ToBeUploaded/xlp.png
+
 
 # Copy the mime.types to the container
 COPY ./resources/mime.types ${ResourceBasePath}/includes/mime.types
@@ -76,6 +78,3 @@ ADD crontab /var/spool/cron/crontab/root
 
 # Give execution rights on the cron job
 RUN chmod 0644 /var/spool/cron/crontab/root
-
-# Make sure that Cron job always starts for the machine.
-RUN crontab /var/spool/cron/crontab/root

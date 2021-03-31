@@ -6,6 +6,15 @@ ResourceBasePath="/var/www/html"
 BackupDir="backup"
 ToBeUploaded="ToBeUploaded"
 
+
+# Check if the ToBeUploaded directory exists
+# if [ ! -e $ResourceBasePath/$BackupDir/$ToBeUploaded/ ]
+# then
+#    echo "Creating the MediaFile directory"
+#    mkdir $ResourceBasePath/$BackupDir/$ToBeUploaded/
+# fi
+
+
 # Load images from the ToBeUploaded directory.
 
 if [ -e $ResourceBasePath/$BackupDir/$ToBeUploaded/ ];

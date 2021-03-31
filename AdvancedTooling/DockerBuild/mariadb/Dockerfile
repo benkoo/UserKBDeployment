@@ -19,5 +19,5 @@ ADD backupRegularly.sh /home/backupRegularly.sh
 
 RUN chmod +x /home/backupRegularly.sh
 
-RUN crontab /var/spool/cron/crontab/root
+# RUN crontab /var/spool/cron/crontab/root
 
