@@ -77,5 +77,17 @@ ADD crontab /var/spool/cron/crontab/root
 # Give execution rights on the cron job
 RUN chmod 0644 /var/spool/cron/crontab/root
 
-# Make sure that Cron job always starts for the machine.
+# Run the cron job
 RUN crontab /var/spool/cron/crontab/root
+
+# Go to the ${ResourceBasePath} for working directory
+WORKDIR ${ResourceBasePath}
+
+# Install PHP package manager "Composer"
+# Requires v1 instead of v2 for compatibility with Semantic MediaWiki 
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/ --filename=composer --version=1.10.16
+
+# Update mediawiki extensions via composer
+RUN echo "{\n\"require\": {\n\"mediawiki/semantic-media-wiki\": \"~3.2\"\n}\n}" > /var/www/html/composer.local.json
+
+# RUN composer update --no-dev

@@ -29,6 +29,7 @@ services:
       # the mediawiki service
       - ./LocalSettings.php:/var/www/html/LocalSettings.php
       - ./mountPoint/backup:/var/www/html/backup
+      - ./mountPoint/backup/ToBeUploaded:/var/www/html/backup/ToBeUploaded
 
 
     depends_on:
