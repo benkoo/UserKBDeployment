@@ -241,4 +241,4 @@ $wgMediaViewerExtensions['stl'] = 'mmv.3d';
 wfLoadExtension( '3DAlloy' );
 
 # The following statement is only used for Semantic MediaWiki 
-# enableSemantics();
+enableSemantics();

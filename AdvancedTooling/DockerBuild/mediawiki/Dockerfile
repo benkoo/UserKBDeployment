@@ -95,9 +95,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Update mediawiki extensions via composer
 RUN echo "{\n\"require\": {\n\"mediawiki/semantic-media-wiki\": \"~3.2\"\n}\n}" > /var/www/html/composer.local.json
 
-# RUN useradd -u 5320 composer 
-# USER composer
-# RUN composer update --no-dev
 # Warning: instsalling semantic mediawiki requires an additional 2GB of storage, it will make
 # downloaind terribly slow. Do it with care.
-# RUN composer require mediawiki/semantic-media-wiki "~3.2"
+RUN composer require mediawiki/semantic-media-wiki "~3.2"
