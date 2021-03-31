@@ -8,11 +8,11 @@ ToBeUploaded="ToBeUploaded"
 
 
 # Check if the ToBeUploaded directory exists
-# if [ ! -e $ResourceBasePath/$BackupDir/$ToBeUploaded/ ]
-# then
-#    echo "Creating the MediaFile directory"
-#    mkdir $ResourceBasePath/$BackupDir/$ToBeUploaded/
-# fi
+if [ ! -e $ResourceBasePath/$BackupDir/$ToBeUploaded/ ]
+ then
+    echo "Creating the MediaFile directory"
+    mkdir $ResourceBasePath/$BackupDir/$ToBeUploaded/
+fi
 
 
 # Load images from the ToBeUploaded directory.
