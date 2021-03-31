@@ -24,7 +24,9 @@ WORKDIR ${ResourceBasePath}/extensions
 RUN apt update
 RUN apt install -y nodejs npm
 RUN git clone https://gerrit.wikimedia.org/r/3d2png
-RUN cd 3d2png
+WORKDIR ${ResourceBasePath}/extensions/3d2png
+RUN npm update
+RUN npm upgrade
 RUN npm install
 
 # Copy 3D package to extensions/
@@ -86,10 +88,16 @@ RUN crontab /var/spool/cron/crontab/root
 WORKDIR ${ResourceBasePath}
 
 # Install PHP package manager "Composer"
+
 # Requires v1 instead of v2 for compatibility with Semantic MediaWiki 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/ --filename=composer --version=1.10.16
 
 # Update mediawiki extensions via composer
 RUN echo "{\n\"require\": {\n\"mediawiki/semantic-media-wiki\": \"~3.2\"\n}\n}" > /var/www/html/composer.local.json
 
+# RUN useradd -u 5320 composer 
+# USER composer
 # RUN composer update --no-dev
+# Warning: instsalling semantic mediawiki requires an additional 2GB of storage, it will make
+# downloaind terribly slow. Do it with care.
+# RUN composer require mediawiki/semantic-media-wiki "~3.2"
