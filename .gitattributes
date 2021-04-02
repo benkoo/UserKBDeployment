@@ -8,4 +8,4 @@
 *.* text eol=lf
 
 # Windows forced line-endings
-/.idea/* text eol=crlf
+# /.idea/* text eol=crlf

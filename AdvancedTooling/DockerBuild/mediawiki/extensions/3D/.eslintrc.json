@@ -1,7 +1,11 @@
 {
 	"root": true,
 	"extends": [
+<<<<<<< HEAD
+		"wikimedia/client",
+=======
 		"wikimedia/client-es5",
+>>>>>>> a394479d3d8a7764d710b16d3adc10529546e06a
 		"wikimedia/jquery",
 		"wikimedia/mediawiki"
 	],

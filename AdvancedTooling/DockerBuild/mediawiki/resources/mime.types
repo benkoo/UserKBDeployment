@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+application/json json 3djson 3dj three buff buffjson
+application/obj obj
+application/stl stl stlb
+=======
 ###############################################################################
 #
 #  MIME media types and the extensions that represent them.
@@ -848,3 +853,4 @@ x-conference/x-cooltalk				ice
 
 x-epoc/x-sisx-app				sisx
 x-world/x-vrml					vrm vrml wrl
+>>>>>>> a394479d3d8a7764d710b16d3adc10529546e06a
