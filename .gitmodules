@@ -1,0 +1,3 @@
+[submodule "Pagewise"]
+	path = Pagewise
+	url = git@github.com:benkoo/Pagewise.git
