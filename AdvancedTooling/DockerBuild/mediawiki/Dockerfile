@@ -32,6 +32,9 @@ RUN npm install
 # Copy 3D package to extensions/
 COPY ./extensions/3D/ ${ResourceBasePath}/extensions/3D/
 
+# Copy Math package to extensions/
+COPY ./extensions/Math/ ${ResourceBasePath}/extensions/Math/
+
 # Copy 3DAlloy package to extensions/
 COPY ./extensions/3DAlloy/ ${ResourceBasePath}/extensions/3DAlloy/
 

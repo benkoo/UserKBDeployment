@@ -245,10 +245,10 @@ $wgTrustedMediaFormats[] = "application/octet-stream";
 
 $wgMediaViewerExtensions['stl'] = 'mmv.3d';
 
-
-#wfLoadExtension( 'StlHandler' );
-
 wfLoadExtension( '3DAlloy' );
+
+# Loading Math extension
+wfLoadExtension( 'Math' );
 
 # The following statement is only used for Semantic MediaWiki 
 # enableSemantics();
