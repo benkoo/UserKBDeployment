@@ -72,7 +72,7 @@ Then, "change directory" (type "cd" in Command Line Prompt) to the top level dir
 
 
 ```
-cd UserKBDeployment
+cd UserKBDeployment/AdvancedTooling/MultiVM/
 ```
 
 ### Launch vagrant processes
