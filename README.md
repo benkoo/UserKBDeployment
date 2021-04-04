@@ -48,9 +48,6 @@ Your system must have Git installed. Therefore, please go to the website to inst
 Your system must have Docker installed. [Docker Installation]
 If your host machine is running Ubuntu, just go to the next step, the "./up.sh" script will install Docker software for you.
 
-## Create a 'Workspace' Folder 
-??On your Desktop or in Documents create a folder called Workespace. This is were we will download the files for your data service.??
-
 ## Grab code from Git, and Execute the installation activities
 After Git has been installed on your local system, please go to a command line interface (CLI), and use Git 
 to download the this project to a local working directory.
