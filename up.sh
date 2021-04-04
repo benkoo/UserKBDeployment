@@ -44,7 +44,15 @@ docker-compose down --volumes
 # If the mountPoint directory doesn't exist, 
 # Decompress the InitialDataPackage to ./mountPoint 
 if [ ! -e ./mountPoint/ ]; then
-  tar -xzvf ./InitialDataPackage.tar.gz -C .
+
+if [ ! -e ./InitialContentPackage.tar.gz ]; then
+  
+  curl  https://raw.githubusercontent.com/benkoo/XLPWikiMountPoint/main/InitialContentPackage.tar.gz > temp.tar.gz
+fi
+  tar -xzvf ./temp.tar.gz -C .
+  if [ -e ./temp.tar.gz ]; then 
+    rm ./temp.tar.gz
+  fi
 fi
 
 # Start the docker processes
